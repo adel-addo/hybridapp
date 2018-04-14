@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Chat with your assistant
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ 
+   
+
+
+          <div class="chat-message" >
+          <div class="left-bubble">
+            <span class="msg-name">
+            
+           <ion-icon name="person" danger item-left></ion-icon>
+            Me</span>
+            
+            <p text-wrap>{{message}}</p>
+          </div>
+        </div>
+
+        
+      <ion-list>
+   
+      <ion-item *ngFor="let data of displayData" no-lines>
+        
+         <div class="chat-message" >
+         <div class="right-bubble">
+         
+            <span class="msg-name">
+            
+          <ion-icon name="person" danger item-left></ion-icon>
+            Assistant
+            
+            </span>
+            
+            <p text-wrap>{{data.answer}}</p>
+          </div>
+       </div>
+      
+      </ion-item>
+
+    </ion-list>
+ 
+    
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-10>
+        <ion-input type="text" placeholder="Type a message" [(ngModel)]="message" name="message"></ion-input>
+      </ion-col>
+      <ion-col col-2 (click)="sendMessage(message)">
+        <ion-icon name="paper-plane"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

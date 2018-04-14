@@ -1,0 +1,8 @@
+{
+  "name": "hybridapp",
+  "app_id": "8ac68b5a",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
