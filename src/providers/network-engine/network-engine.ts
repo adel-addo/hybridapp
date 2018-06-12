@@ -23,7 +23,22 @@ export class NetworkEngineProvider {
 
   }
   
- 
+
+  postData(credentials){
+
+   
+    let url="http://127.0.0.1:5000/classify";
+
+     let httpOptions = {
+     headers: new HttpHeaders({
+     'Content-Type':  'application/json',
+      'Server': 'Werkzeug/0.14.1 Python/3.5.2',
+
+    })};
+    let request=this.http.post(url, credentials);
+    return request.toPromise();
+
+}
 
 
 
@@ -69,7 +84,25 @@ export class NetworkEngineProvider {
 
   }
 
+  crawl(n):Promise<any>
+  {  let httpOptions = {
+     headers: new HttpHeaders({
+     'Content-Type':  'application/json',
+     
+    })};
+    let url="http://127.0.0.1:5000/classify";
+    let param=
+          {
+                 'username': n
 
+          };
+   
+
+    let request=this.http.post(url,param,httpOptions);
+
+    return request.toPromise();
+
+  }
   
  
 }

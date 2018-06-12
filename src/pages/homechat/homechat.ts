@@ -63,6 +63,24 @@ export class HomechatPage {
         }
        )
      }
+
+    crawlSite(n)
+   {
+      this.network.call(n).then
+      (data=>
+        {
+         this.response=""+JSON.stringify(data);
+          //console.log("I received: "+JSON.stringify(data));
+          //this.responseTxt=JSON.stringify(data);
+          this.responseTxt=JSON.stringify(data);
+          this.parsedData = JSON.parse(this.responseTxt);
+
+          this.displayData = this.parsedData.username;
+        }
+       ).catch( error => {
+          this.displayData= "error";
+    })
+     }
   
 
 }

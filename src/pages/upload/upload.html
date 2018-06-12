@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Uploada
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+   <div *ngIf="!isSelected">
+      <h2>Select image and upload</h2>
+      <input
+         type="file"
+         (change)="selectFileToUpload($event)">
+   </div>
+
+
+
+   <div *ngIf="isSelected">
+   	 <button
+   	    ion-button
+   	    color="primary"
+   	    (click)="uploadFile()">Upload</button>
+
+         <!-- Display the selected image -->
+   	 <img [src]="image">
+   </div>
+
+
+</ion-content>

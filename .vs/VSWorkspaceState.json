@@ -7,8 +7,9 @@
     "\\src\\pages\\itemdetails",
     "\\src\\pages\\mealdetails",
     "\\src\\pages\\results",
+    "\\src\\pages\\track",
     "\\src\\theme"
   ],
-  "SelectedNode": "\\src\\pages\\hometwo",
+  "SelectedNode": "\\src\\pages\\track\\track.html",
   "PreviewInSolutionExplorer": false
 }

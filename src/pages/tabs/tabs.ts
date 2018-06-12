@@ -14,11 +14,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'tabs.html',
 })
 export class TabsPage {
-   tab3 = 'HomechatPage';
-  tab2 = 'PeoplePage';
-  tab1 = 'ListPage';
- 
-    tab4 = 'HomefourPage';
+  //tab8='TrackPage';
+tab3 = 'HomechatPage';
+  tab4 = 'MedsPage';
+  tab2 = 'ListPage';
+   tab5 = 'WalkPage';
+     // tab6 = 'PdfPage';
+   tab1 = 'FoodPage';
+    //tab9='MailsPage';
+      tab7='ChartPage';
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

@@ -35,7 +35,7 @@ export class ListPage {
 
  openDetails() {
    // this.navCtrl.push('ResultsPage');
-    this.navCtrl.push('ResultsPage', {weightId: this.profile.value["weight"]  ,ageId: this.profile.value["age"]
+    this.navCtrl.push('MealPage', {weightId: this.profile.value["weight"]  ,ageId: this.profile.value["age"]
     ,heightId: this.profile.value["height"],
    activityId: this.profile.value["activity"] ,genderId: this.profile.value["gender"]});
     

@@ -1,10 +1,129 @@
-<ion-navbar *navbar>
-<button menuToggle>
-  <ion-icon name="menu"></ion-icon>
-</button>
-<ion-title>Hello Ionic</ion-title>
-</ion-navbar>
+
+
+<ion-header>
+
+  <ion-navbar >
+    <ion-title>Glucose readings</ion-title>
+    <ion-buttons end>
+  <button ion-button icon-only (click)="go()">
+    <ion-icon name="add"></ion-icon>
+      </button>
+  </ion-buttons >
+  </ion-navbar>
+
+</ion-header>
 
 <ion-content>
-  <h1>Hello World</div>
+   <div padding>
+  <ion-segment [(ngModel)]="cat">
+    <ion-segment-button value="men">
+      Add Sugar Reading
+    </ion-segment-button>
+    <ion-segment-button value="women">
+      Download Pdf
+    </ion-segment-button>
+    </ion-segment>
+</div>
+
+<div [ngSwitch]="cat">
+  <ion-list *ngSwitchCase="'men'">
+   
+      
+  
+    
+   
+
+
+
+   <form [formGroup]="profile" (submit)="open(sugar,period)">
+   <ion-row align-items-end>
+   <ion-col col-5>
+    <ion-item>
+    <ion-label stacked>Blood Sugar</ion-label>
+    <ion-input class="txt" type="number" formControlName="sugar"></ion-input>
+    </ion-item>
+    </ion-col >
+   
+   <ion-col col-5>
+  <ion-item>
+    <ion-label stacked>Period</ion-label>
+    <ion-select formControlName="period">
+      <ion-option value="Fasting">Fasting</ion-option>
+      <ion-option value="Before Meal">Before Meal</ion-option>
+      <ion-option value="After Meal">After Meal</ion-option>
+         <ion-option value="Bedtime">Bedtime</ion-option>
+      <ion-option value="Before Exercise">Before Exercise</ion-option>
+
+
+    </ion-select>
+  </ion-item>
+  </ion-col>
+
+  
+          
+
+              
+         
+
+
+ 
+
+
+      <button ion-button type="submit"  >Submit</button>
+</ion-row >
+      </form>
+
+      
+<ion-list>
+    <ion-item *ngFor="let contact of countryList ">
+       <ion-avatar item-left>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5jpPd1RSEii9438-_rOmyKYZEKzOCMWezH9mGY1OSRLWjaQ5ORQ" >
+      </ion-avatar>
+      <h3>Sugar reading: {{contact.sugar}}</h3>
+      <h3>Period: {{contact.period}}</h3>
+      
+     
+    </ion-item>
+    </ion-list>
+
+
+
+
+
+
+
+
+
+
+
+
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'women'">
+   <ion-item>
+    <ion-label stacked>From</ion-label>
+    <ion-input [(ngModel)]="letterObj.from"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>To</ion-label>
+    <ion-input [(ngModel)]="letterObj.to"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Text</ion-label>
+    <ion-textarea [(ngModel)]="letterObj.text" rows="10"></ion-textarea>
+  </ion-item>
+ 
+  <button ion-button full (click)="createPdf()">Create PDF</button>
+  <button ion-button full (click)="download()" color="secondary" [disabled]="!pdfObj">Download PDF</button>
+    
+
+ </ion-list>
+</div>
+   
+
+ 
+    
+
+ 
+
 </ion-content>

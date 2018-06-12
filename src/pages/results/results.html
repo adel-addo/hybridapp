@@ -29,8 +29,10 @@
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Ccs2IPnwKTRz5SyOGAR_fnMF118d0Z-uXFbtiS2DuUlChfjUWg" />
   </ion-slide>
  
- 
- 
+   <ion-slide>
+    <img src="https://healthyhappysmart.com/blog/wp-content/uploads/2017/03/Good-Carbs-Bad-Carbs-greenred-pdf.jpg" />
+  </ion-slide>
+
 </ion-slides>
 </ion-header>
  
@@ -106,6 +108,31 @@
 </ul>
 
 
+<ul>
+
+     
+    <div class=bg2>
+  <ion-list *ngFor="let contact of maindishObservable| async;let i=index">
+    
+    <ion-item-sliding>
+    <ion-item >
+  
+      <ion-avatar item-left>
+      <img src="{{contact.Image}}" >
+      </ion-avatar>
+      <h3>{{contact.Title}}</h3>
+      <h4>Calories: {{contact.Calories}}</h4>
+     <button ion-button clear item-right (click)="goToDetails(contact)">View</button>
+    </ion-item>
+     <ion-item-options>
+      <button danger (click)="removeItem(contact)"><ion-icon trash></ion-icon> Delete</button>
+    </ion-item-options>
+  </ion-item-sliding>
+   
+  </ion-list>
+  
+  </div >  
+</ul>
 
 
 

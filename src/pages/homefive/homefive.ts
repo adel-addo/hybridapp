@@ -30,18 +30,19 @@ export class HomefivePage {
         sugar: ['1', Validators.required]
   } );
            this.readingsList = af.list('/readings').valueChanges();
-         this.contactList = af.list('/contacts').valueChanges();
+         this.contactList = af.list('/meds').valueChanges();
 }
   
 
 
-  addContact(name: string,  address: string,  license: string,  city: string) : void{
-   const contactRef: firebase.database.Reference = firebase.database().ref(`/contacts/`);
+  addContact(meds: string,  description: string,  date: string,  time: string) : void{
+   const contactRef: firebase.database.Reference = firebase.database().ref(`/meds/`);
     contactRef.push({
-      name: name,
-      address: address,
-      license: license,
-      city: city
+      meds: meds,
+      description: description,
+      date:date,
+      time:time,
+    
     }).then( newContact => {
       this.navCtrl.pop();
     }, error => {
@@ -84,7 +85,9 @@ export class HomefivePage {
       console.log(error);
     });
   }
-     displayAlert(title 		: string,
+
+
+  displayAlert(title 		: string,
    				message 	: string) : void
    {
       let alert : any 		=	this._ALERT.create({

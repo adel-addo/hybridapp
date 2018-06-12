@@ -1,0 +1,439 @@
+<ion-header>
+
+  <ion-navbar color>
+    <ion-title>Recommendation</ion-title>
+         <ion-buttons end>
+  <button ion-button icon-only (click)="regenerate()">
+    <ion-icon name="refresh"></ion-icon>
+  </button>
+  </ion-buttons>
+  </ion-navbar>
+    <ion-slides autoplay="50" loop="true" speed="10000">
+  <ion-slide>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLOyoH2pzXOkmvzw4FYFtsT8FsIuEUKXh7uJx-ctsjQUivms6x" />
+  </ion-slide>
+
+   <ion-slide>
+    <img src='https://images.agoramedia.com/everydayhealth/gcms/Ketogenic-Diet-for-Diabetes-What-to-Know-Before-Trying-1440x810.jpg?width=722'/>
+  </ion-slide>
+ 
+  <ion-slide>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Ccs2IPnwKTRz5SyOGAR_fnMF118d0Z-uXFbtiS2DuUlChfjUWg" />
+  </ion-slide>
+ 
+   <ion-slide>
+    <img src="https://healthyhappysmart.com/blog/wp-content/uploads/2017/03/Good-Carbs-Bad-Carbs-greenred-pdf.jpg" />
+  </ion-slide>
+     <ion-slide>
+    <img src="http://anatomicalfx.com/wp-content/uploads/2014/07/Great-Good-and-Bad-Carbs.jpg" />
+  </ion-slide>
+</ion-slides>
+
+</ion-header>
+
+<ion-content>
+
+   <div padding>
+  <ion-segment [(ngModel)]="cat">
+    <ion-segment-button value="men">
+      Foreign Meals
+    </ion-segment-button>
+    <ion-segment-button value="women">
+      Local Meals
+    </ion-segment-button>
+    </ion-segment>
+</div>
+
+<div [ngSwitch]="cat">
+  <ion-list *ngSwitchCase="'men'">
+    
+ 
+  <p>DietType:{{dietType}} </p>  
+  Total Calories:{{flc}}
+  
+  <ion-list-header >Breakfast</ion-list-header>
+  
+  <ul>
+
+     
+    <div class=bg2>
+   
+  <ion-list *ngFor="let contact of send7;let a=index " >
+ <div *ngIf="a== i7">
+    <ion-item-sliding>
+    <ion-item >
+  
+      <ion-avatar item-left>
+      <img src="{{contact.Image}}" >
+      </ion-avatar>
+      <h3>{{contact.Name}}</h3>
+      <h4>Calories: {{contact.Calories}}</h4>
+       <h4>Serving: {{contact.Serving}}</h4>
+     <button ion-button clear item-right (click)="goToDetails(contact)">View</button>
+     
+      
+    </ion-item>
+     <ion-item-options side="right">
+      <button danger (click)="change7()"><ion-icon trash></ion-icon> Delete</button>
+    </ion-item-options>
+  </ion-item-sliding>
+    </div>
+  </ion-list>
+  
+  </div >  
+</ul>
+
+
+<ul>
+
+     
+    <div class=bg2>
+    
+  <ion-list *ngFor="let contact of send8;let a=index " >
+ <div *ngIf="a== i8">
+    <ion-item-sliding>
+    <ion-item >
+  
+      <ion-avatar item-left>
+      <img src="{{contact.Image}}" >
+      </ion-avatar>
+      <h3>{{contact.Name}}</h3>
+      <h4>Calories: {{contact.Calories}}</h4>
+       <h4>Serving: {{contact.Serving}}</h4>
+     <button ion-button clear item-right (click)="goToDetails(contact)">View</button>
+     
+      
+    </ion-item>
+     <ion-item-options side="right">
+      <button danger (click)="change8()"><ion-icon trash></ion-icon> Delete</button>
+    </ion-item-options>
+  </ion-item-sliding>
+    </div>
+  </ion-list>
+  
+  </div >  
+</ul>
+
+<ion-list-header >Lunch</ion-list-header>
+<ul>
+ <div class=bg2>
+   
+  <ion-list *ngFor="let contact of send9;let a=index " >
+ <div *ngIf="a== i9">
+    <ion-item-sliding>
+    <ion-item >
+  
+      <ion-avatar item-left>
+      <img src="{{contact.Image}}" >
+      </ion-avatar>
+      <h3>{{contact.Name}}</h3>
+      <h4>Calories: {{contact.Calories}}</h4>
+       <h4>Serving: {{contact.Serving}}</h4>
+     <button ion-button clear item-right (click)="goToDetails(contact)">View</button>
+     
+      
+    </ion-item>
+     <ion-item-options side="right">
+      <button danger (click)="change9()"><ion-icon trash></ion-icon> Delete</button>
+    </ion-item-options>
+  </ion-item-sliding>
+    </div>
+  </ion-list>
+  
+  </div>  
+</ul>
+
+
+<ul>
+ <div class=bg2>
+    
+  <ion-list *ngFor="let contact of send10;let a=index " >
+ <div *ngIf="a== i10">
+    <ion-item-sliding>
+    <ion-item >
+  
+      <ion-avatar item-left>
+      <img src="{{contact.Image}}" >
+      </ion-avatar>
+      <h3>{{contact.Name}}</h3>
+      <h4>Calories: {{contact.Calories}}</h4>
+       <h4>Serving: {{contact.Serving}}</h4>
+     <button ion-button clear item-right (click)="goToDetails(contact)">View</button>
+     
+      
+    </ion-item>
+     <ion-item-options side="right">
+      <button danger (click)="change10()"><ion-icon trash></ion-icon> Delete</button>
+    </ion-item-options>
+  </ion-item-sliding>
+    </div>
+  </ion-list>
+  
+  </div>  
+</ul>
+
+<ion-list-header >Supper</ion-list-header>
+  <ul> 
+ <div class=bg2>
+    
+  <ion-list *ngFor="let contact of send11;let a=index " >
+ <div *ngIf="a== i11">
+    <ion-item-sliding>
+    <ion-item >
+  
+      <ion-avatar item-left>
+      <img src="{{contact.Image}}" >
+      </ion-avatar>
+      <h3>{{contact.Name}}</h3>
+      <h4>Calories: {{contact.Calories}}</h4>
+       <h4>Serving: {{contact.Serving}}</h4>
+     <button ion-button clear item-right (click)="goToDetails(contact)">View</button>
+     
+      
+    </ion-item>
+     <ion-item-options side="right">
+      <button danger (click)="change11()"><ion-icon trash></ion-icon> Delete</button>
+    </ion-item-options>
+  </ion-item-sliding>
+    </div>
+  </ion-list>
+  
+  </div>  
+</ul>
+<ul>
+ <div class=bg2>
+    
+  <ion-list *ngFor="let contact of send12;let a=index " >
+ <div *ngIf="a== i12">
+    <ion-item-sliding>
+    <ion-item >
+  
+      <ion-avatar item-left>
+      <img src="{{contact.Image}}" >
+      </ion-avatar>
+      <h3>{{contact.Name}}</h3>
+      <h4>Calories: {{contact.Calories}}</h4>
+       <h4>Serving: {{contact.Serving}}</h4>
+     <button ion-button clear item-right (click)="goToDetails(contact)">View</button>
+     
+      
+    </ion-item>
+     <ion-item-options side="right">
+      <button danger (click)="change12()"><ion-icon trash></ion-icon> Delete</button>
+    </ion-item-options>
+  </ion-item-sliding>
+    </div>
+  </ion-list>
+  
+  </div>  
+</ul>
+    <ion-buttons>
+    <button ion-button icon-only (click)="stats()">
+    <ion-icon name="stats"></ion-icon>
+  </button>
+  </ion-buttons>
+
+
+
+
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'women'">
+  <p>DietType:{{dietType}} </p>   
+  Total Calories:{{tlc}}
+
+ 
+
+
+  
+  <ion-list-header >Breakfast</ion-list-header>
+  <ul>
+
+     
+    <div class=bg2>
+    
+  <ion-list *ngFor="let contact of send;let a=index " >
+ <div *ngIf="a== i">
+    <ion-item-sliding>
+    <ion-item >
+  
+      <ion-avatar item-left>
+      <img src="{{contact.Image}}" >
+      </ion-avatar>
+      <h3>{{contact.Name}}</h3>
+      <h4>Calories: {{contact.Calories}}</h4>
+       <h4>Serving: {{contact.Serving}}</h4>
+     <button ion-button clear item-right (click)="goToDetails(contact)">View</button>
+     
+      
+    </ion-item>
+     <ion-item-options side="right">
+      <button danger (click)="change()"><ion-icon trash></ion-icon> Delete</button>
+    </ion-item-options>
+  </ion-item-sliding>
+    </div>
+  </ion-list>
+  
+  </div >  
+</ul>
+
+
+<ul>
+
+     
+    <div class=bg2>
+
+  <ion-list *ngFor="let contact of send2;let a=index " >
+ <div *ngIf="a== i2">
+    <ion-item-sliding>
+    <ion-item >
+  
+      <ion-avatar item-left>
+      <img src="{{contact.Image}}" >
+      </ion-avatar>
+      <h3>{{contact.Name}}</h3>
+      <h4>Calories: {{contact.Calories}}</h4>
+       <h4>Serving: {{contact.Serving}}</h4>
+     <button ion-button clear item-right (click)="goToDetails(contact)">View</button>
+     
+      
+    </ion-item>
+     <ion-item-options side="right">
+      <button danger (click)="change2()"><ion-icon trash></ion-icon> Delete</button>
+    </ion-item-options>
+  </ion-item-sliding>
+    </div>
+  </ion-list>
+  
+  </div >  
+</ul>
+
+<ion-list-header >Lunch</ion-list-header>
+<ul>
+ <div class=bg2>
+    
+  <ion-list *ngFor="let contact of send3;let a=index " >
+ <div *ngIf="a== i3">
+    <ion-item-sliding>
+    <ion-item >
+  
+      <ion-avatar item-left>
+      <img src="{{contact.Image}}" >
+      </ion-avatar>
+      <h3>{{contact.Name}}</h3>
+      <h4>Calories: {{contact.Calories}}</h4>
+       <h4>Serving: {{contact.Serving}}</h4>
+     <button ion-button clear item-right (click)="goToDetails(contact)">View</button>
+     
+      
+    </ion-item>
+     <ion-item-options side="right">
+      <button danger (click)="change3()"><ion-icon trash></ion-icon> Delete</button>
+    </ion-item-options>
+  </ion-item-sliding>
+    </div>
+  </ion-list>
+  
+  </div >  
+</ul>
+
+
+<ul>
+ <div class=bg2>
+    
+  <ion-list *ngFor="let contact of send4;let a=index " >
+ <div *ngIf="a== i4">
+    <ion-item-sliding>
+    <ion-item >
+  
+      <ion-avatar item-left>
+      <img src="{{contact.Image}}" >
+      </ion-avatar>
+      <h3>{{contact.Name}}</h3>
+      <h4>Calories: {{contact.Calories}}</h4>
+       <h4>Serving: {{contact.Serving}}</h4>
+     <button ion-button clear item-right (click)="goToDetails(contact)">View</button>
+     
+      
+    </ion-item>
+     <ion-item-options side="right">
+      <button danger (click)="change4()"><ion-icon trash></ion-icon> Delete</button>
+    </ion-item-options>
+  </ion-item-sliding>
+    </div>
+  </ion-list>
+  
+  </div >  
+</ul>
+
+<ion-list-header >Supper</ion-list-header>
+  <ul> 
+ <div class=bg2>
+    
+  <ion-list *ngFor="let contact of send5;let a=index " >
+ <div *ngIf="a== i5">
+    <ion-item-sliding>
+    <ion-item >
+  
+      <ion-avatar item-left>
+      <img src="{{contact.Image}}" >
+      </ion-avatar>
+      <h3>{{contact.Name}}</h3>
+      <h4>Calories: {{contact.Calories}}</h4>
+       <h4>Serving: {{contact.Serving}}</h4>
+     <button ion-button clear item-right (click)="goToDetails(contact)">View</button>
+     
+      
+    </ion-item>
+     <ion-item-options side="right">
+      <button danger (click)="change5()"><ion-icon trash></ion-icon> Delete</button>
+    </ion-item-options>
+  </ion-item-sliding>
+    </div>
+  </ion-list>
+  
+  </div >  
+</ul>
+<ul>
+ <div class=bg2>
+    
+  <ion-list *ngFor="let contact of send6;let a=index " >
+ <div *ngIf="a== i6">
+    <ion-item-sliding>
+    <ion-item >
+  
+      <ion-avatar item-left>
+      <img src="{{contact.Image}}" >
+      </ion-avatar>
+      <h3>{{contact.Name}}</h3>
+      <h4>Calories: {{contact.Calories}}</h4>
+       <h4>Serving: {{contact.Serving}}</h4>
+     <button ion-button clear item-right (click)="goToDetails(contact)">View</button>
+     
+      
+    </ion-item>
+     <ion-item-options side="right">
+      <button danger (click)="change6()"><ion-icon trash></ion-icon> Delete</button>
+    </ion-item-options>
+  </ion-item-sliding>
+    </div>
+  </ion-list>
+  
+  </div >  
+</ul>
+
+<ion-buttons>
+    <button ion-button icon-only (click)="stats2()">
+    <ion-icon name="stats"></ion-icon>
+  </button>
+  </ion-buttons>
+ </ion-list>
+</div>
+ 
+  
+ 
+    
+
+ 
+
+</ion-content>

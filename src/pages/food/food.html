@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Food Recognition
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+        <ion-card-header>
+           
+        </ion-card-header>
+        
+        <ion-card-content>
+          {{response}}
+            
+            <ion-item *ngFor="let url of urlList;let a=index">
+            <div *ngIf="a== 0">
+             <h1> Meal: {{ urlList[0] }} </h1>
+             <h1> Status: {{ urlList[1] }} </h1>
+             <h1> Accuracy: {{ urlList[2] }} </h1>
+    
+    </div>
+    
+  </ion-item>
+        </ion-card-content>
+    </ion-card>
+
+  <div style="display:flex; flex-direction:column;justify-content:center">
+
+    <button ion-button color="primary" (click)="accessGallery()">Open Gallery</button>
+      <button ion-button (click)="upload()" *ngIf="captureDataUrl">Upload !</button>
+      <ion-card>
+        <ion-card-content>
+            
+    <img [src]="captureDataUrl" *ngIf="captureDataUrl"/>
+
+    
+  
+        </ion-card-content>
+    </ion-card>
+     
+       <button ion-button (click)="takePicture()">Lets take a picture!</button>
+  </div>
+</ion-content>

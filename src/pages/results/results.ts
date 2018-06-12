@@ -60,7 +60,7 @@ export class ResultsPage {
     
   }
 
-    removeItem(item){
+  removeItem(item){
  
    this.one();
  

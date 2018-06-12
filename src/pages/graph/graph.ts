@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NetworkEngineProvider } from '../../providers/network-engine/network-engine';
 import * as HighCharts from 'highcharts';
-import { HometwoPage } from '../../pages/hometwo/hometwo';
+//import { HometwoPage } from '../../pages/hometwo/hometwo';
 //import { Chart } from 'angular-highcharts';
 //import * as HighchartsMore from 'highcharts-more';
 /**
@@ -38,7 +38,7 @@ export class GraphPage {
 
   read()
 {
-   this.navCtrl.push(HometwoPage);
+   //this.navCtrl.push(HometwoPage);
    
 }
 
@@ -84,14 +84,14 @@ chart: {
 
 },
 title: {
-text: 'Stock Exchange'
+text: 'Nutrition Chart'
 },
 xAxis: {
 categories: ['Calories',  'Carbs','Protein','Fat']
 },
 yAxis: {
 title: {
-text: 'Stock Chart'
+text: 'Nutrition Chart'
 }
 },
 series: [{
@@ -102,13 +102,13 @@ type: 'pie',
  
    data: [{
             name: 'Carbs',
-            y:  this.dino.Carbs
+            y:  45
         },  {
             name: 'Protein',
-            y:  this.dino.Protein
+            y:  25
         }, {
             name: 'Fat',
-            y:  this.dino.Fat
+            y:  20
         }]
  
  },
@@ -117,9 +117,9 @@ type: 'pie',
 
 {
 
-name: "Breakfast",
+name: "Meal",
 type: 'bar',
-data: [this.dino.Calories, this.dino.Carbs,this.dino.Protein,this.dino.Fat]
+//data: [this.dino.Calories, this.dino.Carbs,this.dino.Protein,this.dino.Fat]
 
 }]
 });

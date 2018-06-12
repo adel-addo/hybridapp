@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     Send Readings
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content padding>
+  
+  <ion-item>
+    <ion-label stacked>From</ion-label>
+    <ion-input [(ngModel)]="letterObj.from"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>To</ion-label>
+    <ion-input [(ngModel)]="letterObj.to"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Text</ion-label>
+    <ion-textarea [(ngModel)]="letterObj.text" rows="10"></ion-textarea>
+  </ion-item>
+ 
+  <button ion-button full (click)="createPdf()">Create PDF</button>
+  <button ion-button full (click)="download()" color="secondary" [disabled]="!pdfObj">Download PDF</button>
+    <button ion-button full (click)="sendEmail()" color="secondary" [disabled]="!pdfObj">Send Email</button>
+    <ion-list>
+    <ion-item *ngFor="let contact of countryList ">
+       <ion-avatar item-left>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5jpPd1RSEii9438-_rOmyKYZEKzOCMWezH9mGY1OSRLWjaQ5ORQ" >
+      </ion-avatar>
+      <h3>Sugar reading: {{contact.sugar}}</h3>
+      <h3>Period: {{contact.period}}</h3>
+      
+     
+    </ion-item>
+    </ion-list>
+
+</ion-content>
