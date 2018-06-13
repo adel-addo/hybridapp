@@ -110,7 +110,7 @@ constructor(public navCtrl: NavController,private camera: Camera,http: Http) {
 
 
    submit() {
-        var link = ' http://172.20.10.2:5000/classify';
+        var link = ' https://guarded-chamber-31132.herokuapp.com/classify';
         var data = JSON.stringify({username: this.data.username});
         
         this.http.post(link, data)
